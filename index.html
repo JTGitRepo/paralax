@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Permanent+Marker" rel="stylesheet">
+
+    <style>
+        *   {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }   
+
+        #container {
+            color: #efefef;
+
+            background: #875bad;
+        /*height: 300vh;*/
+
+        
+        }
+
+        .header{
+            font-family: Arial;
+
+            width: 100%;
+            font-size: 3em;
+            color: inherit;
+            opacity: .9;
+            height: 80vh;
+            margin: 0 auto;
+            padding: 4%;
+
+            text-align: center;
+            /*width: 60%;*/
+        }
+
+      
+
+        .main {
+            color: #efefef;
+        	font-family: 'Inconsolata', monospace;
+            width: 100%;
+            height: 150vh;
+            font-size: 2.5em;
+
+            /*border: 1px solid green;            */
+            /*width:80%*/
+            /*left: 30%;*/
+        	/*z-index: 010;*/
+
+        }
+
+
+        .tab {
+            font-weight: 900;
+        	text-transform: uppercase;
+        	text-decoration: none;
+            height: 15vh;
+            width: 100%;
+            transition: height 400ms;
+            /*border: 1px solid blue;*/
+            background: #875bad;
+        }
+
+
+
+        .anchor {
+            /*padding: 5%;*/
+            /*border: 1px solid red;*/
+            /*transition: padding 1s;*/
+            /*width: 60%;*/
+        }
+
+     
+
+
+        .grow {
+            height: 100vh;
+            /*font-size: 2.3em;*/
+            /*padding: 0 20%;*/
+            transition: height 400ms;
+
+        }
+
+
+        
+             
+
+          
+
+             .fix {
+                position: fixed;
+                top: 0;
+             }
+
+   .page {
+            background: #eee;
+            height: 0;
+            padding: 0;
+            width: 98%;
+            margin: 0 auto;
+        }
+        .stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+    </style>
+</head>
+<body>
+        <div class="" id="container">
+            <h1 class="header">John Todd<small> - Web developer</small></h1>
+
+    <div class='main'>
+    	<div class='tab'><div class="anchor">About me</div><div class="page"></div></div>
+        <div class='tab'><div class="anchor">Samples</div><div class="page"></div></div>
+        
+        <div class='tab'><div class="anchor">Blog</div><div class="page"></div></div>
+    <div class='tab'><div class="anchor">Contact</div><div class="page"></div></div>
+    </div>
+    </div>
+    
+            
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script>
+
+//     var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//     acc[i].onclick = function(){
+//         this.classList.toggle("active");
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     }
+// }
+
+     $('.anchor').click(function(){
+            $('.page').slideToggle('slow');
+        });
+
+    // select all elements with the '.tab' class
+    // var subject = document.querySelectorAll('.anchor'); 
+
+    //     // for each element of class '.tab', perform block
+    //     for(var i = 0; i < subject.length; i++){
+
+    //         // assign event listener of typle click
+    //         subject[i].addEventListener('click', function(){
+
+
+
+    //              if(this.parentElement.classList.contains('fix'))
+    //             {
+    //                 //allows body to scrolling once menu closes
+    //                 $('body').css('overflow', 'visible')
+
+    //                 //scrolls top of menu to top of window
+    //                  $('html, body').animate({
+    //                   scrollTop: $(this).parent().parent().offset().top  
+    //                  },500); 
+
+    //                  //removes grow class from anchor parent element(tab)
+    //                this.parentElement.classList.remove('grow');
+
+    //                  //removes fix class from anchor parent element(tab)
+    //                 this.parentElement.classList.remove('fix');
+    //                 this.nextElementSiblng.classList.remove('grow');
+
+    //                 // allows body to scroll on mobile
+    //                 document.ontouchmove = function (e) {
+    //                   return true;
+    //                 }
+
+    //             } 
+
+    //             // if anchor parent has class .fix  
+    //             else 
+    //             {
+
+    //                     // scroll top of this tab to top of window
+    //                  $('html, body').animate({
+    //                   scrollTop: $(this).parent().offset().top  
+    //                  }, 500);
+
+    //                 //add grow class to anchor parent element(tab) 
+    //                this.parentElement.classList.add('grow');
+    //                // alert(this.inne/rHTML)
+    //                 // this.nextElementSiblng.classList.add('grow');
+
+    //                // assigns this (currentTarget) to 'this' variable
+    //                 var that = this
+
+    //                 //begins setTimeout function
+    //                 setTimeout(function(){
+
+    //                 //add fix class to anchor parent element(tab) after 1000 milliseconds
+    //                     that.parentElement.classList.add('fix');
+    //                 // $(this).bind('click', behave(this))
+
+    //                 }, 500)
+
+    //                 // prevents body from scrolling behind menu in mobile
+    //                document.ontouchmove = function (e) {
+    //                  e.preventDefault();
+    //                 }
+
+    //                 // prevents body from scrolling behind menu
+
+    //                 $('body').css('overflow', 'hidden')
+    //                 $('body').addClass('stop-scrolling')
+    //                 // $(this).unbind('click')
+
+    //             }
+            
+    //         }
+    //         )}
+
+
+
+ 
+        
+    </script>
+    </body>
+</html>
